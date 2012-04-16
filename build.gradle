@@ -18,7 +18,6 @@ project.ext {
 dependencies {
 
     testCompile 'junit:junit:4.10'
-    testCompile 'javax.servlet:servlet-api:2.5'
     testCompile 'org.mockito:mockito-all:1.8.5'
 
     compile "org.springframework:spring-core:$springVersion"
@@ -37,12 +36,9 @@ dependencies {
 
     compile 'org.slf4j:slf4j-jdk14:1.5.2'
 
-
     compile "javax.xml:jaxb-impl:$jaxbVersion"
     compile "javax.xml:jaxb-api:$jaxbVersion"
 
-    compile 'javax.servlet:jstl:1.1.2'
-    compile 'org.apache.taglibs:com.springsource.org.apache.taglibs.standard:1.1.2'
 }
 
 task wrapper(type: Wrapper) {
