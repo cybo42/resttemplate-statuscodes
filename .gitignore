@@ -1,0 +1,8 @@
+build/
+.idea/
+.gradle/
+out/
+
+resttemplate-statuscodes.iml
+resttemplate-statuscodes.ipr
+resttemplate-statuscodes.iws

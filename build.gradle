@@ -1,0 +1,50 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+project.ext {
+    springVersion = "3.1.1.RELEASE"
+    jaxbVersion = "2.0EA3"
+    jacksonVersion = '1.9.0'
+}
+
+dependencies {
+
+    testCompile 'junit:junit:4.10'
+    testCompile 'javax.servlet:servlet-api:2.5'
+    testCompile 'org.mockito:mockito-all:1.8.5'
+
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-expression:$springVersion"
+    compile "org.springframework:spring-beans:$springVersion"
+    compile "org.springframework:spring-aop:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-web:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-oxm:$springVersion"
+    compile "org.springframework:spring-test:$springVersion"
+
+    compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+    compile 'cglib:cglib:2.2'
+
+    compile 'org.slf4j:slf4j-jdk14:1.5.2'
+
+
+    compile "javax.xml:jaxb-impl:$jaxbVersion"
+    compile "javax.xml:jaxb-api:$jaxbVersion"
+
+    compile 'javax.servlet:jstl:1.1.2'
+    compile 'org.apache.taglibs:com.springsource.org.apache.taglibs.standard:1.1.2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.0-milestone-9'
+}
