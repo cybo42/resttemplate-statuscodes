@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.UnknownHttpStatusCodeException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +26,7 @@ public class CustomResponseErrorHandler extends DefaultResponseErrorHandler{
             // First try to use the DefaultResponseHandler
             return super.hasError(response);
 
-        }catch(IllegalArgumentException argException){
+        }catch(UnknownHttpStatusCodeException argException){
             // If we are there then status code was not in the default list
             // try check the custom list
 

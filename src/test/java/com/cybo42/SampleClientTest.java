@@ -12,6 +12,7 @@ import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.UnknownHttpStatusCodeException;
 
 import java.io.ByteArrayInputStream;
 import java.net.URI;
@@ -60,7 +61,7 @@ public class SampleClientTest {
      *
      * @throws Exception
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = UnknownHttpStatusCodeException.class)
     public void testCustomResponse() throws Exception{
         RestTemplate restTemplate = createMock(450, "Validation error", "username required");
 
